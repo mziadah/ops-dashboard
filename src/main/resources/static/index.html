@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marlowe &amp; Finch Operations</title>
+  <script>
+    // Set the theme before the first paint so the wall screen never flashes light (TODO-231).
+    // Same key and default as app.js; colours stay in style.css.
+    (function () {
+      var t = 'dark';
+      try { if (localStorage.getItem('ops-theme') === 'light') { t = 'light'; } } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,6 +33,8 @@
           <button id="preset-90" class="preset" type="button">90 days</button>
         </div>
       </form>
+
+      <button id="theme-toggle" class="theme-toggle" type="button">Light theme</button>
     </header>
 
     <main>
